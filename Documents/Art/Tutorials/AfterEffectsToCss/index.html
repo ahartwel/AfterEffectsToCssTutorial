@@ -1,0 +1,477 @@
+<html>
+<head>
+<title>Tutorial: After Effects to CSS KeyFrame Animation</title>    
+<script src="shCore.js"></script>
+    <script src="shBrushJScript.js"></script>
+    <script src="shBrushXML.js"></script>
+    <script src="shBrushCss.js"></script> 
+<link href="style.css" rel="stylesheet" type="text/css">
+<link href="shCore.css" rel="stylesheet" type="text/css">
+<link href="shThemeDefault.css" rel="stylesheet" type="text/css">
+ <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>   
+    
+</head>
+
+    
+    
+<body>
+    <div id="container">
+        <div id="navigation">
+            <div id="head">After Effects to CSS Keyframe Animation</div>
+            <div id="whichStep">
+            <div class="circle visible" number="0"></div>
+            <div class="circle" number="1"></div>
+            <div class="circle" number="2"></div>
+            <div class="circle" number="3"></div>
+            <div class="circle" number="4"></div>
+            <div class="circle" number="5"></div>
+            <div class="circle" number="6"></div>
+            <div class="circle" number="7"></div>
+            <div class="circle" number="8"></div>
+            <div class="circle" number="9"></div>
+            <div class="circle" number="10"></div>
+            <div class="circle" number="11"></div>
+            <div class="circle" number="12"></div>
+            <div class="circle" number="13"></div>
+            <div class="circle" number="14"></div>
+            <div class="circle" number="15"></div>
+            <div class="circle" number="16"></div>
+            
+            </div>
+            <div id="title">Final Code and Animation</div>
+        </div>
+        
+        <div class="main mainVisible" number="0">
+            <div class="step" number="0">
+       <pre class="brush: js, html-script: true">
+
+              
+&lt;img id="riff" src="riff.png" />
+&lt;img id="tiara" src="tiara.png"/>
+&lt;img id="rolling" src="rollingstones.png"/>
+&lt;img id="lil" src="lildebbie.png"/>
+&lt;img id="slippers" src="slippers.png"/>
+&lt;img id="passport" src="passport.png"/>
+&lt;img id="rice" src="rice.png"/>
+&lt;img id="lilsmoke" src="lildebbiesmoke.png"/>
+
+&lt;p id="rubytuesday">
+&lt;span  class="ibooks-media-audio" data-ibooks-audio-reset-on-play="true" data-ibooks-audio-src="RubyTuesday.wav">Ruby Tuesday,&lt;br/>&lt;/span>
+&lt;span class="ibooks-media-audio" data-ibooks-audio-reset-on-play="true" data-ibooks-audio-src="ImportImportant.wav">Cinderella Ballerina&lt;br/>
+Import Important Passport&lt;br/>&lt;/span>
+Pasadena
+&lt;/p>
+&lt;/div>
+            
+</pre>
+
+    <pre class="brush: css">
+
+#riff {
+position: absolute;
+z-index:0;
+left: -248px;
+top: -159px;
+-webkit-animation-fill-mode: forwards;
+-webkit-animation-name: riff, riffloop;
+-webkit-animation-duration: 2s, 7s;
+-webkit-animation-timing-function: cubic-bezier(.48,.51,.61,.5);
+-webkit-animation-delay: 0s, 2s;
+-webkit-animation-iteration-count: 1, infinite;
+-webkit-animation-play-state: running;
+}
+
+#tiara {
+position: absolute;
+z-index:2;
+left: -77.5px;
+top: -97.5px;
+-webkit-animation-fill-mode: forwards;
+-webkit-animation-name: tiara, tiaraloop;
+-webkit-animation-duration: 2s, 7s;
+-webkit-animation-timing-function: cubic-bezier(.48,.51,.61,.5);
+-webkit-animation-delay: 0s, 2s;
+-webkit-animation-iteration-count: 1, infinite;
+-webkit-animation-play-state: running;
+
+
+}
+
+#rolling {
+position: absolute;
+z-index:3;
+left: -125.5px;
+top: -179px;
+-webkit-animation-fill-mode: forwards;
+-webkit-animation-name: rolling, rollingloop;
+-webkit-animation-duration: 2s, 7s;
+-webkit-animation-timing-function: cubic-bezier(.48,.51,.61,.5);
+-webkit-animation-delay: 0s, 2s;
+-webkit-animation-iteration-count: 1, infinite;
+-webkit-animation-play-state: running;
+
+}
+
+#lil {
+position: absolute;
+z-index:-1;
+left: -230.5px;
+top:-322.5px;
+-webkit-animation-fill-mode: forwards;
+-webkit-animation-name: lil, lilloop;
+-webkit-animation-duration: 2s, 7s;
+-webkit-animation-timing-function: cubic-bezier(.48,.51,.61,.5);
+-webkit-animation-delay: 0s, 2s;
+-webkit-animation-iteration-count: 1, infinite;
+-webkit-animation-play-state: running;
+} 
+#lilsmoke {
+position: absolute;
+z-index:-3;
+left: -78px;
+top:-90.5px;
+-webkit-animation-fill-mode: forwards;
+-webkit-animation-name: lilsmoke, lilsmokeloop;
+-webkit-animation-duration: 2s,7s;
+-webkit-animation-timing-function: cubic-bezier(.48,.51,.61,.5);
+-webkit-animation-delay: 0s, 2s;
+-webkit-animation-iteration-count: 1, infinite;
+-webkit-animation-play-state: running;
+} 
+
+#slippers {
+position: absolute;
+z-index:1;
+left: -125.5px;
+top: -105.5px;
+-webkit-animation-fill-mode: forwards;
+-webkit-animation-name: slippers, slippersloop;
+-webkit-animation-duration: 2s, 7s;
+-webkit-animation-timing-function: cubic-bezier(.48,.51,.61,.5);
+-webkit-animation-delay: 0s, 2s;
+-webkit-animation-iteration-count: 1, infinite;
+-webkit-animation-play-state: running;
+
+}
+
+#passport {
+position: absolute;
+z-index:-2;
+left: -107.5px;
+top: -173.5px;
+-webkit-animation-fill-mode: forwards;
+-webkit-animation-name: passport, passportloop;
+-webkit-animation-duration: 2s,7s;
+-webkit-animation-timing-function: cubic-bezier(.48,.51,.61,.5);
+-webkit-animation-delay: 0s,2s;
+-webkit-animation-iteration-count: 1,infinite;
+-webkit-animation-play-state: running;
+
+}
+
+#rice {
+position: absolute;
+z-index:4;
+left: -120.5px;
+top: -87px;
+-webkit-animation-fill-mode: forwards;
+-webkit-animation-name: rice, riceloop;
+-webkit-animation-duration: 2s, 7s;
+-webkit-animation-timing-function: cubic-bezier(.48,.51,.61,.5);
+-webkit-animation-delay: 0s, 2s;
+-webkit-animation-iteration-count: 1, infinite;
+-webkit-animation-play-state: running;
+}
+
+
+#rubytuesday {
+font-size: 200%;
+-webkit-transform: translate(95px,250px);
+}
+
+@-webkit-keyframes slippersloop {
+0% {-webkit-transform: translate(772.866px,104.958px) rotate(-0.208361deg) scale(0.998958); }
+25% {-webkit-transform: translate(765.744px,85.3681px) rotate(-7.74306deg) scale(0.961285); }
+50% {-webkit-transform: translate(757.092px,81.7284px) rotate(-2.94329deg) scale(0.975998); }
+75% {-webkit-transform: translate(751.476px,85.9323px) rotate(8.80545deg) scale(1.01957); }
+100% {-webkit-transform: translate(773px,105.5px) rotate(0deg) scale(1.0); }
+}
+
+@-webkit-keyframes passportloop {
+0% {-webkit-transform: translate(916.263px,146.048px) rotate(0deg) scale(1.00111); }
+25% {-webkit-transform: translate(929.803px,148.515px) rotate(0deg) scale(1.04041); }
+50% {-webkit-transform: translate(945.969px,151.46px) rotate(0deg) scale(1.00486); }
+75% {-webkit-transform: translate(955.119px,153.127px) rotate(0deg) scale(0.95); }
+100% {-webkit-transform: translate(916.263px,146.048px) rotate(0deg) scale(1.00111);  }
+}
+
+
+@-webkit-keyframes lilloop {
+0% {-webkit-transform: translate(794.056px,472.833px) rotate(0.0445478deg) scale(1.00111); }
+25% {-webkit-transform: translate(801.139px,477.083px) rotate(1.61639deg) scale(1.04041); }
+50% {-webkit-transform: translate(821.335px,491.604px) rotate(-3.50141deg) scale(1.0076799); }
+75% {-webkit-transform: translate(838.374px,504.284px) rotate(-10.2024deg) scale(0.953625); }
+100% {-webkit-transform: translate(793.5px,472.5px) rotate(0deg) scale(1.0); }
+}
+
+@-webkit-keyframes lilsmokeloop {
+0% {-webkit-transform: translate(563.105px,344.711px) rotate(0.10751deg) scale(0.998981); }
+25% {-webkit-transform: translate(564.447px,328.27px) rotate(5.83984deg) scale(0.961828); }
+50% {-webkit-transform: translate(594.738px,353.871px) rotate(12.832deg) scale(0.95901495); }
+75% {-webkit-transform: translate(642.768px,416.656px) rotate(17.938deg) scale(0.981514); }
+100% {-webkit-transform: translate(563px,346px) rotate(0deg) scale(1.0); }
+}
+
+
+
+
+@-webkit-keyframes riceloop {
+0% {-webkit-transform: translate(190px,656px) rotate(0deg) scale(1.0014601); }
+25% {-webkit-transform: translate(190px,656px) rotate(0deg) scale(1.0541999); }
+50% {-webkit-transform: translate(190px,656px) rotate(0deg) scale(1.01359); }
+75% {-webkit-transform: translate(190px,656px) rotate(0deg) scale(0.936025); }
+100% {-webkit-transform: translate(190px,656px) rotate(0deg) scale(1.0); }
+}
+
+
+@-webkit-keyframes riffloop {
+
+0% {-webkit-transform: translate(570.953px,636.42px) rotate(-0.0466385deg) scale(1.0016301); }
+25% {-webkit-transform: translate(569.336px,650.973px) rotate(-1.66371deg) scale(1.0582299); }
+50% {-webkit-transform: translate(569.443px,658.358px) rotate(0.179019deg) scale(1.00463); }
+75% {-webkit-transform: translate(570.322px,655.573px) rotate(1.5056deg) scale(0.96236); }
+100% {-webkit-transform: translate(571px,636px) rotate(0deg) scale(1.0); }
+}
+
+@-webkit-keyframes tiaraloop {
+0% {-webkit-transform: translate(638.733px,83.4403px) rotate(-0.513023deg) scale(1.0); }
+25% {-webkit-transform: translate(646.819px,64.0354px) rotate(-18.3009deg) scale(1.0); }
+50% {-webkit-transform: translate(633.247px,61.0895px) rotate(-4.02309deg) scale(1.0); }
+75% {-webkit-transform: translate(624.95px,67.4384px) rotate(8.28078deg) scale(1.0); }
+100% {-webkit-transform: translate(638.5px,84px) rotate(0deg) scale(1.0); }
+}
+
+
+
+
+@-webkit-keyframes lil {
+0% {-webkit-transform: translate(638.733px,83.4403px) rotate(-0.513023deg) scale(1.0); }
+5% {-webkit-transform: translate(640.029px,80.3293px) rotate(-3.36484deg) scale(1.0); }
+10% {-webkit-transform: translate(641.631px,76.486px) rotate(-6.88779deg) scale(1.0); }
+15% {-webkit-transform: translate(643.329px,72.4114px) rotate(-10.6229deg) scale(1.0); }
+20% {-webkit-transform: translate(645.202px,67.9153px) rotate(-14.7443deg) scale(1.0); }
+25% {-webkit-transform: translate(646.819px,64.0354px) rotate(-18.3009deg) scale(1.0); }
+30% {-webkit-transform: translate(648.167px,60.8004px) rotate(-21.2663deg) scale(1.0); }
+35% {-webkit-transform: translate(647.499px,60.0715px) rotate(-20.8208deg) scale(1.0); }
+40% {-webkit-transform: translate(643.047px,60.3895px) rotate(-15.573deg) scale(1.0); }
+45% {-webkit-transform: translate(638.245px,60.7325px) rotate(-9.9135deg) scale(1.0); }
+50% {-webkit-transform: translate(633.247px,61.0895px) rotate(-4.02309deg) scale(1.0); }
+55% {-webkit-transform: translate(628.31px,61.4421px) rotate(1.79523deg) scale(1.0); }
+60% {-webkit-transform: translate(623.337px,61.7974px) rotate(7.65654deg) scale(1.0); }
+65% {-webkit-transform: translate(620.5px,62px) rotate(11deg) scale(1.0); }
+70% {-webkit-transform: translate(622.212px,64.0928px) rotate(9.95361deg) scale(1.0); }
+75% {-webkit-transform: translate(624.95px,67.4384px) rotate(8.28078deg) scale(1.0); }
+80% {-webkit-transform: translate(628.267px,71.4931px) rotate(6.25344deg) scale(1.0); }
+85% {-webkit-transform: translate(631.347px,75.2571px) rotate(4.37144deg) scale(1.0); }
+90% {-webkit-transform: translate(634.341px,78.917px) rotate(2.54151deg) scale(1.0); }
+95% {-webkit-transform: translate(637.031px,82.2045px) rotate(0.897759deg) scale(1.0); }
+100% {-webkit-transform: translate(638.5px,84px) rotate(0deg) scale(1.0); }
+}
+
+@-webkit-keyframes rollingloop {
+0% {-webkit-transform: translate(513.341px,150.426px) rotate(0.319486deg) scale(1.00104); }
+25% {-webkit-transform: translate(525.566px,165.708px) rotate(11.7808deg) scale(1.03872); }
+50% {-webkit-transform: translate(515.648px,166.065px) rotate(5.20835deg) scale(1.00608); }
+75% {-webkit-transform: translate(501.15px,157.039px) rotate(-5.92503deg) scale(0.95798403); }
+100% {-webkit-transform: translate(513px,150px) rotate(0deg) scale(1.0); }
+}
+
+@-webkit-keyframes slippers {
+0% {-webkit-transform: translate(822.714px,-94.6429px) rotate(92.5714deg) scale(1); }
+100% {-webkit-transform: translate(773px,105.5px) rotate(0deg) scale(1); }
+}
+
+@-webkit-keyframes passport {
+0% {-webkit-transform: translate(1113.14px,-4px) rotate(-55.7143deg) scale(1); }
+100% {-webkit-transform: translate(916px,146px) rotate(0deg) scale(1); }
+}
+
+@-webkit-keyframes lil {
+0% {-webkit-transform: translate(1199.78px,638.785px) rotate(36deg) scale(1); }
+100% {-webkit-transform: translate(793.5px,472.5px) rotate(0deg) scale(1); }
+}
+
+@-webkit-keyframes lilsmoke {
+0% {-webkit-transform: translate(1030.14px,555.999px) rotate(0deg) scale(0); }
+100% {-webkit-transform: translate(563px,346px) rotate(0deg) scale(1); }
+}
+
+@-webkit-keyframes rice {
+0% {-webkit-transform: translate(190px,920.571px) rotate(0deg) scale(0); }
+100% {-webkit-transform: translate(190px,636px) rotate(0deg) scale(1); }
+}
+
+@-webkit-keyframes riff {
+0% {-webkit-transform: translate(571px,920.571px) rotate(0deg) scale(1); }
+100% {-webkit-transform: translate(571px,636px) rotate(0deg) scale(1); }
+}
+
+@-webkit-keyframes tiara {
+0% {-webkit-transform: translate(506.929px,-104.571px) rotate(-157.714deg) scale(1); }
+100% {-webkit-transform: translate(638.5px,84px) rotate(0deg) scale(1); }
+}
+
+@-webkit-keyframes rolling {
+0% {-webkit-transform: translate(132.857px,-127.714px) rotate(-157.714deg) scale(1); }
+100% {-webkit-transform: translate(513px,150px) rotate(0deg) scale(1); }
+}
+    
+    </pre>            
+                
+            </div>
+            
+            
+            
+            <div class="stepImages" number="0">
+                <iframe scrolling="no" class="frame" width="97%" height="125%" src="http://thenightmonkey.com/MoneyCoolsTheHeart/"></iframe>
+                </div>
+        
+        </div>
+        
+        
+        
+        
+        <div class="main" number="1">
+            <div class="step fullHeight" number="0">
+            <img src="moneyCoolsTheHeart.png">
+            <img src="photoshopScript.png">
+            <img src="layersToPNGs.png">
+                
+            </div>
+            
+            
+            
+            
+        
+        </div>
+        
+        
+        
+        
+        <div id="writeUp">
+            <div class="writtenSteps" number="0">
+                This is an exaple of the code and result of that code that will be produced. In the next couple of pages I will show you step by step how to take an animation in After Effects, feed the keyframes  into processing, convert it into CSS code, and then implement it into your site, epub, or whatever you are putting your html in.
+            </div>
+            <div class="writtenSteps hiddenSteps" number="1">
+                <ul>
+                <li>Step 1: Take you artwork in Photoshop and split it up so that each element that you want to animate is on its own layer. </li>
+                <li>Step 2: Go to File>Scripts>Export Layers to Files</li>
+                <li>Step 3: Choose your destination(where you want to save the layers), choose a naming Prefix, and then chose PNG-24 as your file type </li>
+                <li>Step 4: Click Run and your files will save wherever you chose to save them to.</li>
+                <li>Move on to the next page.</li>
+              
+                
+                
+                </ul>
+            </div>
+        
+        <div id="next"><a href="#"><img src="arrow.svg"></a></div>
+        </div>
+        
+        <div id="loading"><p>loading</p></div>
+        
+    </div>
+    <script>
+        var page=0;
+    $(".circle").each(function() {
+       $(this).append("<img class='circleImg' src='circle.svg'>"); 
+        
+    });
+    SyntaxHighlighter.all();
+        $( window ).load(function() {
+   $("#loading").hide();
+});
+    
+    var iFrameScale = ($("#frame").width()/1024);
+    resizeiFrame();
+        
+       function onResize(){ resizeiFrame(); }
+
+var timer;
+$(window).bind('resize', function(){
+   timer && clearTimeout(timer);
+   timer = setTimeout(onResize, 100);
+});
+ 
+        //alert(iFrameScale);
+        function resizeiFrame() {
+             var iFrameScale = ($(".main").width()*.95/1024);
+    var newSize = ($(".main").width()*.95/iFrameScale);
+    var newSizeY = .74*newSize;
+    var divSizeY = iFrameScale*newSizeY;
+        //alert(newSize);
+        //alert(divSizeY);
+        //alert(newSize);
+        $(".frame").each(function() {
+        $(this).css("-webkit-transform", "scale(" + iFrameScale + ")");
+        $(this).css("-moz-transform", "scale(" + iFrameScale + ")");
+        $(this).css("-o-transform", "scale(" + iFrameScale + ")");
+        $(this).css("-ms-zoom", iFrameScale);
+        $(this).width(newSize);
+        $(this).height(newSizeY);
+            
+        });
+        $(".stepImages").each(function() {
+            $(this).height(divSizeY);
+        });
+        
+        //-ms-zoom: 0.5;
+        //-moz-transform: scale(0.75);
+       // -moz-transform-origin: 0 0;
+       // -o-transform: scale(0.75);
+       // -o-transform-origin: 0 0;
+       // -webkit-transform: scale(0.75);
+       // -webkit-transform-origin: 0 0; 
+        }
+        
+        $("#next").click(function() {
+           page++;
+            $(".main").each(function() {
+               
+             if ($(this).attr("number")==page.toString()) {
+               $(this).addClass("mainVisible");
+             } else {
+              $(this).removeClass("mainVisible"); 
+                 if ($(this).attr("number")=="0") {
+                  $(this).attr("src", " ");   
+                 }
+             }
+                
+            });
+            
+            $(".writtenSteps").each(function() {
+                if ($(this).attr("number")==page.toString()) {
+                 $(this).removeClass("hiddenSteps");   
+                } else {
+                 $(this).addClass("hiddenSteps");   
+                }
+                
+            });
+            
+            $(".circle").each(function() {
+             if ($(this).attr("number")==page.toString()) {
+              $(this).addClass("visible");   
+             } else {
+              $(this).removeClass("visible");   
+             }
+                
+            });
+            
+        });
+        
+    </script>
+    
+    
+</body>
+
+</html>

@@ -1,0 +1,204 @@
+body {
+    background-color:#faa660;
+}
+
+#container {
+width: 100%;
+height:100%;
+overflow-x:hidden;
+overflow-y:scroll;
+background-color:#faa660;
+min-width:650px;
+min-height:650px;
+}
+
+#loading {
+background-color:#faa660;
+    width: 100%;
+    height: 100%;
+    position:fixed;
+    top:0;
+    left:0%;
+    z-index:10;
+}
+
+#navigation {
+ width: 100%;
+ height: 20%;
+}
+
+#head {
+ width:100%;
+ height: 30%;
+ padding-top:1%;
+ color: white;
+ text-align: center;
+ font-family: sans-serif;
+    font-size:125%;
+    font-weight:300;
+    opacity:.85;
+}
+#title {
+ margin-top:1%;
+ width:98%;
+    height:53%;
+ background-color:white;
+  color:#faa660;
+    text-align:left;
+    font-size:375%;
+    padding-left:2%;
+    padding-top:2%;
+    font-family: sans-serif;
+    font-weight:200;
+}
+
+#whichStep {
+    width: 100%;
+    height:10%;
+    margin-top:-1%;
+}
+.circle {
+    float: left;
+ width: 5.8%;
+height:100%;
+position: relative; 
+opacity:.4;
+     -webkit-transition: opacity .25s; /* For Safari 3.1 to 6.0 */
+transition: opacity .25s;
+}
+
+.circle:hover {
+ opacity:1;   
+}
+
+.circleImg {
+ height:100%;
+ float: left;
+ position:absolute;
+ left: 4%;
+ left: calc(45% - 8%);
+ 
+}
+
+
+.main {
+    position:absolute;
+    left:-60%;
+    top: 21%;
+ width: 60%;
+height:76%!important;
+overflow: scroll;
+ -webkit-transition: left 1s, -webkit-transform 1s; /* For Safari 3.1 to 6.0 */
+transition: left 1s, transform 1s;
+margin-top:2%;
+}
+
+.fullHeight {
+ height: 90%!important; 
+}
+.fullHeight img {
+ width: 100%;
+height: auto;
+}
+
+.mainVisible {
+ 
+    -webkit-transform: translate(100%, 0);
+    transform: translate(100%, 0);
+
+}
+
+.step {
+ width: 96%;
+    height:50%;
+overflow: scroll;
+padding:2%;
+}
+
+.stepImages {
+
+overflow: scroll;
+padding:2%;
+    margin-top:1%;
+    background-color:white;
+    overflow: hidden;
+}
+
+.frame {
+ -ms-zoom: 0.5;
+        -moz-transform: scale(0.75);
+        -moz-transform-origin: 0 0;
+        -o-transform: scale(0.75);
+        -o-transform-origin: 0 0;
+        -webkit-transform: scale(0 .38);
+        -webkit-transform-origin: 0 0;   
+    overflow: hidden;
+}
+
+#writeUp {
+ position:absolute;
+    width: 35%;
+    right:2.5%;
+    height: 70%;
+    top: 25%;
+    
+}
+
+
+@media (max-height: 650px) { 
+#writeUp {
+    position:absolute;
+    top: 175px;
+    
+}
+    
+  
+}
+
+@media (max-width: 650px) { 
+#writeUp {
+    position:absolute;
+    
+    left: 350px!important;
+    width: 275px;
+}
+    
+    .main {
+ width: 325px;
+}
+    
+}
+
+#next {
+position: absolute;
+ bottom: 1%; 
+right: 1%;
+    width:37%;
+    height: auto;
+    -webkit-transition: width .25s, right .25s; /* For Safari 3.1 to 6.0 */
+transition: width .25s, right .25s;
+}
+
+#next:hover {
+ width:39%;
+ height: auto;
+    right:-1%;
+}
+
+.writtenSteps {
+    position: absolute;
+    top:0;
+ color: white;
+font-family: sans-serif;
+    -webkit-transition: opacity 1s; /* For Safari 3.1 to 6.0 */
+transition: opacity 1s;
+
+}
+
+.hiddenSteps {
+ opacity:0;
+}
+
+.visible {
+ opacity: 1;   
+}
