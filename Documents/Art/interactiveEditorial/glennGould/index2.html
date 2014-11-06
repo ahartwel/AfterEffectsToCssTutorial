@@ -1,0 +1,344 @@
+<html>
+<head>
+    
+    
+ <link rel="stylesheet" href="style2.css" type="text/css"> 
+    <script src="jquery.js"></script>
+    <script type="text/javascript" src="//use.typekit.net/aak3kyd.js"></script>
+<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+    
+</head>
+
+    
+    
+<body>
+    
+    
+<canvas id="fallingText"></canvas>
+    
+    
+    <div id="titleAndMenu">
+        <div class="title">Glen Gould In Rapture
+        <div class="time">Thursday, September 04, 2014 - 07:00 AM</div>
+            <div class="author">Robert Krulwich </div>
+        
+        </div>
+        
+  
+    
+    </div>
+    
+    
+    <div class="intro text">
+            <p>What's going on here, I can only guess, but here's what you're about to see: In the video below, the great musician Glenn Gould, supreme interpreter of Bach, is sitting at his living room piano on a low, low chair, his nose close to the keys. He's at his Canadian country house in his bathrobe.</p>
+            <p>
+Through the window, you catch snatches of his back yard. It's a windy day and he's got a coffee cup sitting on the piano top. He's working on a Bach partita, not just playing it, but singing along in his swinging baritone. As he plays, he gets so totally, totally lost in the music that suddenly (1:57 from the top), smack in the middle of a passage, with no warning, for no apparent reason, his left hand flips up, touches his head; he stands up, and walks in what looks like a trance to the window. There's an eerie silence. Then, in the quiet, you hear the Bach leaking out of him. He's still playing it, but in his head, he's scatting the beats. Then he turns, wanders back, sits down, and his fingers pick up right where his voice left off, but now with new energy, like he's found a switch and switched it.
+            </p>
+            <p>
+What just happened? I'm not sure. But I think this is a rare vision of what it's like to be so in your head you leave your body, or at least the moving parts of your body, totally behind. There is a name for this, from psychologist Mihaly Csikszentmihalyi, but first, just watch. And don't miss the walk-to-the-window part ...
+            </p>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    </div>
+    
+  
+            
+  <div class="video">
+        <iframe class="youtubeEmbed" width="100%" height="100%" src="//www.youtube.com/embed/qB76jxBq_gQ" frameborder="0" allowfullscreen></iframe>
+    </div>
+    
+    <div class="flowState text">
+        <h1>The 'Flow State'</h1>
+        <p>Athletes, of course, call this "being in the zone." Mihaly Csikszentmihalyi (pronounced MEE-high, CHEECH-sent-mee-high) calls it "the flow state." When you are in it, writesneuroscientist Daniel Levitin, "attention is focused on a limited perceptual field that receives your full concentration and complete investment. Action and awareness merge."
+
+You get so deeply into your head, you lose track of everything except what you're doing. There was a surgeon, Csikszentmihalyi says, who wasn't aware that the roof of his operating room had collapsed until he was done with the surgery. In this state, "what you thinkbecomes what you do," Levitin writes. We "get wonderfully, blissfully lost in an activity, losing all track of time, of ourselves, our problems."
+
+How one gets there — that's still a mystery. Practice is important. Tenacity matters. Talent helps. When you find your "flow," your brain changes. Dopamine and noradrenaline kick in, GABA neurons get suppressed; sex, hunger, thirst matter less, you are free to play more deeply with stream-of-conscious associations; you are chemically released and can now roam far and wide. Yes, you have no idea where you are or how this is happening; but that it's happening must be one of the most wonderful experiences ever. When I watch Glenn Gould walking back to his piano, carried there by an 18th-century fugue, I see a man transported, a man not lost, but found, a man in a state of grace. If there is a heaven, Glenn Gould at that moment is very close.</p>
+    
+    
+    </div>
+
+<img class="background" src="http://images2.static-bluray.com/reviews/3987_5.jpg">
+    
+
+     
+  
+    
+    
+    
+    
+   <script>
+       
+       var canvas = document.getElementById("fallingText");
+       canvas.height = window.innerHeight;
+       canvas.width = window.innerWidth;
+       var context= canvas.getContext('2d');
+       
+       var falling = new textFall();
+       
+       $(".scroller").click(function(e) {
+          e.preventDefault(); 
+           
+       });
+       
+       
+       
+       
+       $("li").click(function() {
+         
+       if ($(this).hasClass("0")) {
+        scrolling(0); 
+           
+       } else if ($(this).hasClass("1")) {
+        scrolling(window.innerHeight*2.5);   
+           
+       } else {
+             scrolling($(".scroller")[0].scrollHeight - $(".scroller").height()-(.86*window.innerHeight));
+           
+       }
+           
+           
+       });
+       
+       $("#fallingText").css("position","absolute");
+       $("#fallingText").css("top", $(".flowState").offset().top);
+
+       
+    $(".scroller").scrollTop(.1*window.innerHeight);
+       
+    
+function animate() {
+      
+    
+    if ($(window).scrollTop() > $(".flowState").offset().top) {
+        $("#fallingText").css("position","fixed");   
+        $("#fallingText").css("top","0px");   
+        
+       
+         if (!$(".background").hasClass("dim")) {
+                       $(".background").addClass("dim");
+                   $("body").css("background-color", "black");
+                
+                $("canvas").addClass("dim");
+                   }
+        
+        
+    } else {
+          $("#fallingText").css("position","absolute");
+       $("#fallingText").css("top", $(".flowState").offset().top);
+
+        
+           if ($(".background").hasClass("dim")) {
+                       $(".background").removeClass("dim");
+                   $("body").removeAttr("style");
+                
+                $("canvas").removeClass("dim");
+                   }
+    
+    }
+    
+    
+          if ($(window).scrollTop()>.5*window.innerHeight) {
+          var x = lerp(0,108,( $(window).scrollTop()-(.5*window.innerHeight))/(.25*window.innerHeight));
+            if (x<0) {
+             x=0;   
+            }
+            if (x>108) {
+             x=108;   
+            }
+    
+    
+             var fontSize = lerp(6,2,($(window).scrollTop() - (.5*window.innerHeight ))/(.25*window.innerHeight));
+    if (fontSize>6) {
+     fontSize=6;   
+    } else if (fontSize<2) {
+     fontSize=2;   
+    }
+               $(".title").css("transform","translate(" + x + "%,0px)");
+               $(".title").css("font-size",fontSize + "vw");
+               
+  
+             var y;
+            var sideOne = ( $(window).scrollTop()-(.5*window.innerHeight));
+            if (sideOne>.25*window.innerHeight) {
+             sideOne = .25*window.innerHeight;   
+            }
+    
+                fontSize = lerp(1.8,1.4,sideOne/(.25*window.innerHeight));
+                y = lerp(-2,-.5,sideOne/(.25*window.innerHeight));
+                x = lerp(.5,.1,sideOne/(.25*window.innerHeight));
+              var x2 = lerp(0,71,sideOne/(.25*window.innerHeight));
+                var o = lerp(1,0,sideOne/(.25*window.innerHeight));
+                $(".author").css("font-size",fontSize + "vw");
+                $(".author").css("margin-top",y + "%");
+                $(".author").css("margin-left",x + "%");
+                $(".author").css("transform","translate(" + x2 + "%)");
+                $(".time").css("opacity",o);
+                
+              
+                
+               // $(".time").css("opacity",o);
+    } else {
+        $(".author").removeAttr("style");
+        $(".time").removeAttr("style");
+        $(".title").removeAttr("style");
+        
+    }
+   
+            
+ context.clearRect(0,0,canvas.width, canvas.height);
+        
+     falling.update();
+      falling.display();
+        
+        requestAnimationFrame(animate);
+    }
+    
+    requestAnimationFrame(animate);
+    
+       
+       
+       
+       function textFall() {
+           this.text = $(".intro").text();
+           this.textAll = this.text.split("");
+           this.textWords = this.text.split(" ");
+           this.textSplits = [];
+           
+          
+          
+           this.properties = [];
+      
+           
+           this.canvas = document.createElement('canvas');
+           this.canvas.width = window.innerWidth;
+           this.canvas.height = window.innerHeight;
+           this.context = this.canvas.getContext('2d');
+           
+           for (var i =0; i<this.textAll.length;i++) {
+               this.properties[i] = [];
+            this.properties[i].x = Math.random()*window.innerWidth;   
+            this.properties[i].y = Math.random()*canvas.height;   
+            this.properties[i].ySpeed = Math.random()*5 + 1;   
+             this.properties[i].fontSize = Math.floor(Math.random()*4 + 1);
+           }
+   
+           
+           this.properties.sort(compareNumbers);
+           
+          
+           this.context.fillStyle = "white";
+           
+           this.display = function() {
+                 
+               
+                 if ($(canvas).hasClass("dim")) {
+                this.flashAndClear(.008);
+                 this.context.font = this.properties[0].fontSize + "vw brandon-grotesque";
+                 this.context.fillText(this.textAll[0],this.properties[0].x, this.properties[0].y);
+               for (var i =1; i<this.textAll.length*.4;i++) {
+                if (!this.textAll[i]==" ") {
+                    if (this.properties[i].fontSize!=this.properties[i-1].fontSize) {
+                     this.context.font = this.properties[i].fontSize + "vw brandon-grotesque";
+                    }
+                    this.context.fillText(this.textAll[i],this.properties[i].x, this.properties[i].y);
+                }
+                   
+               }     
+                 } else {
+                     
+                     this.flashAndClear(.1);
+                     this.context.font = this.properties[0].fontSize + "vw brandon-grotesque";
+                 this.context.fillText(this.textWords[0],this.properties[0].x, this.properties[0].y);
+               for (var i =1; i<this.textWords.length*.3;i++) {
+                if (!this.textWords[i]==" ") {
+                    if (this.properties[i].fontSize!=this.properties[i-1].fontSize) {
+                     this.context.font = this.properties[i].fontSize + "vw brandon-grotesque";
+                    }
+                    this.context.fillText(this.textWords[i],this.properties[i].x, this.properties[i].y);
+                }
+                   
+               } 
+                 }
+               
+              
+            
+               context.drawImage(this.canvas,0,0);
+               
+               
+           };
+           
+           
+           this.flashAndClear = function(randomizer) {
+                if (!$(canvas).hasClass("dim")) {
+                  if (Math.random()<randomizer) {
+                this.context.clearRect(0,0,canvas.width, canvas.height);  
+                      
+                       for (var i =1; i<this.textAll.length*.4;i++) {
+                if (!this.textAll[i]==" ") {
+                    this.properties[i].x += Math.random()*30-15; 
+                   
+                }
+                   
+               }
+                      
+                      
+               }
+                }
+               
+           };
+           
+           this.update = function() {
+               
+               for (var i =0; i<this.textAll.length*.5;i++) {
+                if (!this.textAll[i]==" ") {
+                    
+                    if ($(canvas).hasClass("dim")) {
+                    this.properties[i].y+=this.properties[i].ySpeed/4; 
+                    }else {
+                         this.properties[i].y+=this.properties[i].ySpeed; 
+                        
+                    }
+                    
+                    if (this.properties[i].y>=canvas.height+10) {
+                        this.properties[i].x = Math.random()*window.innerWidth;   
+            this.properties[i].y = -1 * Math.random()*10;
+                       
+                        
+                    }
+                }
+               }
+               
+               
+           }
+           
+           
+           
+           
+           
+       }
+       
+       
+        function lerp(a, b, t) {
+            var x = a + t * (b - a);
+            return x;
+        }
+       
+       
+       function compareNumbers(a, b) {
+  return a.fontSize - b.fontSize;
+}
+
+    </script> 
+    
+</body>
+
+
+
+
+
+
+
+</html>

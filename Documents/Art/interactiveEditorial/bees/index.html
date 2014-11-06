@@ -1,0 +1,588 @@
+<html>
+<head>
+    
+<script src="//use.typekit.net/gzt6wyg.js"></script>
+<script>try{Typekit.load();}catch(e){}</script>
+    <script type="text/javascript" src="http://cdn.jsdelivr.net/jquery/2.1.1/jquery.min.js"></script>
+    <script src="http://benalman.com/code/projects/jquery-throttle-debounce/jquery.ba-throttle-debounce.js"></script>
+    <script type="text/javascript" src="mouseWheel.js"></script>
+<style>
+    
+
+    .wrapper {
+     width: 100%;
+height: 100%;
+position: absolute;
+top: 0px;
+left: 0px;   
+    overflow: hidden;    
+    }
+    
+    #honeyComb {
+    position: fixed;
+width: 100%;
+height: 100%;
+background-color: gray;
+z-index: -2; 
+        top: 0px;
+        left: 0px;
+        
+    }
+    
+    #Bees {
+    position: fixed;
+width: 100%;
+height: 100%;
+z-index: -1;  
+        top: 0px;
+        left: 0px;
+        opacity: 1;
+        transition: opacity .4s;
+    }
+    
+#loopMachine {
+    
+ position: absolute;
+left: 0px;
+width: 100%;
+height: 40vw;
+top: 250%; 
+}
+#theCast {
+font-family: "expo-sans-pro";
+height: 30%;
+position: absolute;
+top: 0px;
+width: 100%;
+}
+    
+h1 {
+margin: 0px;
+padding: 0px;
+font-weight: 400;
+font-size: 300%;
+font-size: 3vh;
+height: auto;
+margin-left: 1.5%;
+font-family: "expo-sans-pro";
+    font-weight: 200;
+width: 100%;
+float: left;
+}
+
+    h3 {
+        font-size: 2vw;
+        font-weight: 300;
+     margin: 0px;
+        padding: 0px;
+    }
+    
+.head {
+position: fixed;
+top: 0px;
+left: 0px;
+height: auto;
+width: 100%;
+color: white;
+background-color: black;
+z-index: 1;
+background-color: rgb(166,87,41);
+padding-top: 1%;
+padding-bottom: 1%;
+    box-shadow: 0px -3px 13px rgba(0,0,0,.75);
+}
+    
+.date {
+    font-weight: 200;
+font-size: 1.7vh;
+height: auto;
+transform-origin: center;
+float: left;
+margin-left: 1.5%;
+    margin-top: .5%;
+    padding-bottom: 1%;
+}
+    
+   
+    
+  .body {
+
+left: 0px;
+color: white;
+color: rgb(217,236,247);
+width: 60%;
+padding: 20%;
+padding-left: 5%;
+padding-right: 35%;
+padding-top: 0%!important;
+padding-bottom: 0px;
+      z-index: 0;
+      position: relative;
+}
+p {
+font-size: 2vmin;
+font-family: "expo-sans-pro";
+font-weight: 300;
+margin-bottom: 40%;
+text-align: left;
+margin-top: 0px;
+padding: 16%;
+background-color: rgb(64,31,13);
+background-color: rgba(64,31,13,.65);
+width: 65%;
+box-shadow: 0px 0px 13px rgba(0,0,0,.3);
+padding-left: 10%;
+margin-left: -9%;
+background-color: rgba(255,255,255,.99);
+color: rgb(166,87,41);
+transition: width .3s;
+padding-top: 10%;
+height: 74%;
+width: 50%;
+padding-right: 8%;
+    overflow: scroll;
+}  
+
+    
+        p .title {
+font-weight: 800;
+font-size: 2.5vmin;
+display: inline;
+        }
+    
+    
+    .full {
+    
+        
+    }
+    .explainer {
+position: fixed;
+bottom: 0px;
+width: 15%;
+background-color: white;
+
+color: rgb(166,87,41);
+padding: 3%;
+padding-left: 22.4%;
+padding-right: 2%;
+        z-index: 0;
+}
+    
+    .one {
+margin-bottom: 11%;
+}
+    
+    
+    .two {
+background-color: rgb(166,87,41);
+color: white;
+width: auto;
+text-align: center;
+padding: 7%;
+box-shadow: 0px 0px 9px rgba(0,0,0,0.3);
+        transition: all .3s;
+}
+    
+    
+    span.two {
+width: 40%;
+display: block;
+float: right;
+}
+    
+   .two:hover {
+    cursor: pointer;
+       
+       box-shadow: 0px 0px 6px rgb(0,0,0);
+       
+   }
+    span .two:hover {
+    cursor: pointer;
+       padding: 5%;
+       box-shadow: 0px 0px 6px rgb(0,0,0);
+       
+   }
+    
+    
+    .noTouch {
+     pointer-events: none;   
+        
+    }
+</style>    
+
+    
+    
+    
+</head>
+
+
+<body>
+   <div class="wrapper">
+        <div class="head">
+           
+            <h1>'Murdersquishing' Them To Death: How Little Bees Take On Enormous Hornets</h1>
+           
+            
+            <div class="date">
+               Friday, September 19, 2014 - 05:51 PM By Robert Krulwich : Host, Radiolab
+            </div>
+            
+         
+            
+        
+        
+            
+            
+            
+        </div>
+    
+    
+    
+    <div class="explainer">
+       <div class="one">
+        These are European honeybees. Aren't they cute?
+        
+        </div>
+        <div class="two">Not For Long...</div>
+        
+       
+       </div>
+
+ 
+    <div class="body" onload="letErRip()">
+    
+    <p>
+        </br>
+        </br>
+        </br>
+        <span>I know, I know. You have Putin to worry about, ISIS to worry about, Britain's near breaking, Washington's broken, and the globe keeps getting warmer so why bring up Japanese giant hornets? You have worries enough. But I can't help myself. I've got to mention these hornets because, as bad as they are — and they are very, very bad, this story has a happy ending.</span>
+</br>
+</br>
+<span class="title">Hornets From Hell</span>
+</br>
+</br>
+Japanese giant hornets have large yellow heads, enormous eyes, and they eat bees. "Eat" is too polite. They grab European honeybees, rip off their heads, tear off limbs, throw those parts away and take the big, juicy middle piece (the thorax) back to their kids (the larvae). They are unstoppable. A single hornet, you are about to learn, can kill 40 European honeybees a minute.
+
+European bees, being new to Japan (brought in by cultivators), have evolved no defenses. They haven't had time. But there's a second group of bees the locals, the Japanese honeybees who have found a way. It's precise, orchestral and deadly.
+            </br>
+            </br>
+            <span class="title">How Bees Fight Back</span>
+                </br>
+                </br>
+Matt Inman, who writes and draws a wonderful blog called The Oatmeal, bumped into these hornets — literally — while running through a forest in Japan. Being curious, he read up on them, and in his new book, The Terrible and Wonderful Reasons Why I Run Long Distances, he describes how a crowd of little Japanese bees gets revenge using what Matt happily calls a "Steamy Hot Murdersquish":
+
+</br>
+</br>
+</br>
+ <span class="two">Meet The Bees</span>
+
+</p>
+        <p class="explanation">
+            </br>
+            </br>
+            </br>
+            </br>
+            </br>
+            </br>
+         
+When European honeybees are exposed to Japanese giant hornets, it does not end well for the bees.
+ 
+        A single japanese giant hornet can kill an average of forty Europen honeybees a minute, that's one corpse every 1.5 seconds.
+        A group of thirty can wipe out a colony of 10,000 European honeybees in an hour
+
+</br>
+</br>
+</br>
+
+   That is because European honeybees did not evolve alongside Japanese hornets, and therefore have no natural defense against them.
+   </br>
+   </br>
+   </br>
+   </br>
+   <span class="two">Let's Watch</span>         
+</p>
+   
+        <p class="explanation">
+        </br>
+            </br>
+            </br>
+            </br>
+            </br>
+            </br>
+            </br>
+            When a hornet nears their nest, <span class="title">Japanese honeybees</span> will swarm the hornet and enclose it in a tight ball.
+            </br>
+            </br>
+            </br>
+        The honeybees will then vibrate their wings which turns the "bee ball" into a convection oven. Japanese honeybees can survive in temperatures of up to 122 F (50 C), but a Japanese giant hornet can only withstand temperatures of up to 115 F (46C).
+            </br>
+            </br>
+            </br>
+            So, the honeybees will raise the internal temperature of the ball to exactly 117 F (47C), thereby roasting teh hornet to death, but leaving themselves unscathed. 
+
+</br>
+</br>
+</br>
+</br>
+<span class="two">Turn Up the Heat!</span>
+
+        </p>
+   
+        <p class="explanation">
+            </br>
+            </br>
+            </br>
+            </br>
+            </br>
+            </br>
+            </br>
+     Isn't nature neat?
+        It is. Very neat.
+        </p>
+   
+       
+
+   
+
+          
+            </div>
+    
+    </div>
+  
+
+  <canvas id="honeyComb"></canvas>
+    <canvas id="Bees"></canvas>
+</div>
+  
+
+        <script src="bees.js"></script>
+    <script src="helperFunctions.js"></script>
+    <script src="hexagon.js"></script>
+    <script>
+  
+          var combColors = [];  
+     
+        combColors[0] = "rgb(64,31,13)";
+        combColors[1] = "rgb(166,87,41)";
+        combColors[2] = "rgb(217,144,54)";
+        combColors[3] = "rgb(242,181,68)";
+        combColors[4] = "rgb(242,191,109)";
+        
+        
+   var canvas = document.getElementById('honeyComb');
+        canvas.height = window.innerHeight;
+        canvas.width = window.innerWidth;
+        var context = canvas.getContext('2d');
+        
+        
+        var beesCanvas = document.getElementById('Bees');
+         beesCanvas.height = window.innerHeight;
+        beesCanvas.width = window.innerWidth;
+        var beesContext = beesCanvas.getContext('2d');
+   
+        var x=0;
+        var y = -100;
+        var shift = true;
+        while (y<window.innerHeight) {
+            
+         var hex = new hexagon();   
+        context.drawImage(hex.canvas,x,y);
+            x+= hex.canvas.width;
+            
+            if (x>window.innerWidth) {
+             if (shift) {
+              x=-.5 * hex.canvas.width;   
+             shift=false;
+             } else {
+               x=0; 
+                 shift=true;
+             }
+              y+= .5 * hex.canvas.height;   
+                
+            }
+            
+            
+            
+        }
+        
+        context.rect(0,0,window.innerWidth, window.innerHeight);
+        context.fillStyle = "rgba(0,0,0,0.25)";
+        context.fill();
+        </script>
+    
+    
+    
+    <script>        
+       
+        
+        
+        var hornet = [];
+        
+        for (var i =0; i<2; i ++) {
+         hornet[i] = new Hornets();   
+            
+        }
+        
+        var bees = [];
+        for (var i = 0; i<35;i++) {
+            
+         bees[i] = new Bee();   
+        }
+        
+           requestAnimationFrame(animate);
+         
+         
+         
+          var timer = 0;
+        var slow = 0;
+        var slowTimer = 0;
+        
+        
+        
+        function animate() {
+            if (slow==0) {
+            slowTimer++;
+                if (slowTimer>=3) {
+                 slowTimer=0;   
+                }
+                
+            }
+            
+           if (slow==1 || slowTimer==0) {
+            
+             for (var i = 0; i<bees.length;i++) {
+              // bees[i].draw();
+            bees[i].update();
+             }
+            
+            for (var i = 0; i<hornet.length;i++) {
+              
+                //console.log(hornet[i].numberAttached);
+                hornet[i].update();
+               
+                //hornet[i].numberAttached=0;
+                }
+               
+               
+               
+                if (timer==1) {
+                  beesContext.clearRect(0,0,window.innerWidth, window.innerHeight);
+            for (var i = 0; i<bees.length;i++) {
+                 
+                   
+                  bees[i].draw();
+                    
+                 }
+               if (whichP>=3) { 
+                for (var i = 0; i<hornet.length;i++) {
+                hornet[i].draw();
+            }
+               }
+                
+                              // beesContext.drawImage(hornet.head,600,600)
+                   timer=0; 
+            }
+               
+               
+               for (var i = 0; i<hornet.length;i++) {
+              
+                
+                hornet[i].numberAttached=0;
+                }
+               
+                  timer++;
+           }
+            
+            
+           
+            if (whichP==5) { 
+            var deadCount=0;
+            
+            for (var i = 0; i < hornet.length;i++) {
+                if (hornet[i].dead==true) {
+                 deadCount++;   
+                }
+            }
+            if (deadCount==hornet.length) {
+                whichP++;
+                 setTimeout(function() {
+                    for (var i = 0; i<bees.length;i++) {
+                 
+                
+                    bees[i].resetDeath();   
+                        if (Math.random()<.5) {
+                    bees[i].changeColor("rgb(255,200,0)");   
+                        }
+                    
+                }
+                    
+                        
+                       
+                    changeIt();
+                    },200);
+            }
+            }
+            
+            if (whichP==3) {
+            
+                var deadCount=0;
+                for (var i = 0; i<bees.length;i++) {
+                 if (bees[i].state=="die") {
+                    deadCount++;   
+                 }
+                    
+                }
+               
+                if (deadCount>=bees.length) {
+               
+                  whichP++;
+                    setTimeout(function() {
+                    for (var i = 0; i<bees.length;i++) {
+                 
+                 bees[i].changeColor();
+                    bees[i].resetDeath();   
+                 
+                    
+                }
+                
+                       for (var i = 0; i<hornet.length;i++) {
+                
+                    hornet[i].state="fly";   
+                 
+                    
+                }
+                        
+                       
+                    changeIt();
+                    },1500);
+                    
+                }
+                
+                
+            } 
+         requestAnimationFrame(animate);   
+        }
+  
+       
+     
+        
+        
+        
+        
+        
+        
+        
+        
+        
+       
+        
+        
+       
+    </script>
+    
+    
+    
+</body>
+
+
+</html>

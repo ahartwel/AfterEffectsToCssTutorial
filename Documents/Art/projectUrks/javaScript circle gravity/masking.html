@@ -1,0 +1,75 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>circleShits</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #000000;
+        }
+    </style>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+    <script src="pixi.js"></script>
+    
+    
+</head>
+<body>
+    <script>
+ 
+    var stage = new PIXI.Stage( 0x000000 );
+        var renderer = PIXI.autoDetectRenderer(window.innerWidth,window.innerHeight);
+        document.body.appendChild(renderer.view);
+        var xPos, yPos;
+        xPos = 0;
+        yPos = 0;
+        
+        
+        
+         var myMask = new PIXI.Graphics();
+        myMask.beginFill();
+        myMask.drawCircle(150,150,300);
+        myMask.endFill();
+        
+        stage.addChild(myMask);
+        
+        var circle = new PIXI.Graphics();
+        circle.beginFill(0xFFFFFF,1);
+        circle.drawCircle(0,0,300);
+        circle.endFill();
+        stage.addChild(circle);
+        console.log(circle);
+        circle.mask = myMask;
+        
+        console.log(circle);
+       
+        requestAnimFrame( animate );
+        
+        function animate() {
+         requestAnimFrame( animate );
+            
+        //circle.position.x-=.05;
+        //circle.position.y-=.05;
+            
+            
+            
+            renderer.render(stage);
+            
+            
+        }
+        
+        
+       
+        
+
+            
+         
+        
+       
+        
+        
+    </script>
+ 
+    </body>
+</html>

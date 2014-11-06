@@ -1,0 +1,183 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>circleShits</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #000000;
+        }
+    </style>
+    <script src="pixi.js"></script>
+    <script src="main.js"></script>
+    
+</head>
+<body>
+    <script>
+ 
+    var stage = new PIXI.Stage( 0x000000 );
+        var renderer = PIXI.autoDetectRenderer(window.innerWidth,window.innerHeight);
+        document.body.appendChild(renderer.view);
+        var xPos, yPos;
+        xPos = 0;
+        yPos = 0;
+        
+        
+        
+        
+
+        var platform =  [];
+        for (var i=0;i<=100;i++) {
+         platform[i] = new Platforms(Math.random()*300*i,Math.random()*200*i);
+           // console.log(platform[i].centerX);
+           platform[i].drawIt();
+            
+        }
+        
+        var connection = new connector();
+        connection.drawShape();
+        requestAnimFrame( animate );
+        
+        function animate() {
+         requestAnimFrame( animate );
+            
+           
+            var xAdd = Math.random() * 10;
+            var yAdd = Math.random() * 10;
+            
+            for (var i=0;i<platform.length;i++) {
+           
+           platform[i].moveIt();
+        platform[i].dimmer();
+        
+        }
+            
+            connection.animate();
+            
+            
+            
+            
+            renderer.render(stage);
+            
+            
+        }
+        
+        
+        
+        
+        function checkBoundsY() {
+            
+         if ((yPos<0) || (yPos>windows.innerHeight)) {
+          return true;   
+         } else {
+          return false;   
+         }
+        }
+        
+        function checkBoundsX() {
+            
+         if ((xPos<0) || (xPos>windows.innerWidth)) {
+          return true;   
+         } else {
+          return false;   
+         }
+        }
+        
+        
+        
+        //platformsClass
+        function Platforms(cx,cy) {
+         this.box = new PIXI.Graphics();
+         this.centerX = cx,
+         this.centerY = cy,
+            
+             this.left = false;
+            this.down = false;
+            this.justStarted=true;
+         this.l = Math.random()*(300-50)+50,   
+         this.drawIt = function() {
+        
+            this.box.beginFill(0xFFFFFFF);
+            this.box.lineStyle(5, 0xFFFFFFF);
+            this.box.drawRect(0, 0, 400,300);
+            this.box.endFill();
+          this.box.position.x = this.centerX;
+            this.box.position.y = this.centerY; 
+             stage.addChild(this.box); 
+            
+         };
+            
+            this.dimmer = function() {
+                this.box.alpha-=Math.random()*.03;
+                
+                if (this.box.alpha<=0) this.box.alpha=.8;
+            };
+           
+            this.moveIt = function() {
+                if (this.down) {
+                 this.box.position.y+=Math.random()*8;   
+                } else {
+                 this.box.position.y-=Math.random()*8;   
+                }
+                
+                if (this.left) {
+                 this.box.position.x-=Math.random()*8;   
+                } else {
+                 this.box.position.x+=Math.random()*8;   
+                }
+                
+                if (this.box.position.x<=0) {
+                 this.left=false;   
+                } else if (this.box.position.x>=window.innerWidth) {
+                    this.left=true;
+                }
+                
+                if (this.box.position.y<0) {
+                 this.down=true;   
+                } else if (this.box.position.y>=window.innerHeight) {
+                 this.down=false;   
+                }
+            }
+            
+        }
+        
+        
+        
+        //connectingLineFunction
+        function connector() {
+            this.conLine = new PIXI.Graphics();
+            
+            
+            this.drawShape = function() {
+             this.conLine.lineStyle(10,0xFF);
+             this.conLine.moveTo(platform[0].box.position.x,platform[0].box.position.y);
+             for (i = 1;i<platform.length;i++) {
+              this.conLine.lineTo(platform[i].box.position.x,platform[i].box.position.y);
+             }
+                
+            stage.addChild(this.conLine);
+             }
+              
+            this.animate = function() {
+             this.conLine.clear();
+              this.conLine.lineStyle(10,0xFF);
+                this.conLine.alpha = .5;
+             this.conLine.moveTo(platform[0].box.position.x+200,platform[0].box.position.y+150);
+             for (i = 1;i<platform.length;i++) {
+              this.conLine.lineTo(platform[i].box.position.x+200,platform[i].box.position.y+150);
+             }  
+                
+            }
+                
+            }
+            
+         
+        
+       
+        
+        
+    </script>
+ 
+    </body>
+</html>

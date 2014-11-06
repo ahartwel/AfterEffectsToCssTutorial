@@ -1,0 +1,56 @@
+<html>
+<head>
+    
+
+    
+    
+    <style>
+    
+    
+    
+    #myAudio {
+     position: fixed;
+        bottom: 0px;
+        left: 0px;
+        height: 35px;
+        
+    }
+        
+        #arcticCanvas {
+         position: fixed;
+         top: 0px;
+        left: 0px;
+            width: 100%;
+            height: 100%;
+            height: calc(100% - 35px);
+            
+            
+        }
+    
+    
+    </style>
+    
+</head>
+
+
+<body>
+ <audio id="myAudio" controls>
+  <source src="song.mp3" type="audio/mpeg">
+  Your browser does not support the audio tag.
+</audio> 
+    
+    <canvas id="arcticCanvas"></canvas>
+    
+<script src="amplitude.js"></script>
+
+    <script src="helperFunctions.js"></script>
+    <script src="clouds.js"></script>
+    <script src="shadows.js"></script>
+    <script src="ground.js"></script>
+    <script src="analyser.js"></script>
+    <script src="land.js"></script>
+    <script src="main.js"></script>
+    
+</body>
+
+</html>

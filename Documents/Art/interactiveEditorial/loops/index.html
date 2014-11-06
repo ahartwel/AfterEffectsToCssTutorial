@@ -1,0 +1,253 @@
+<html>
+<head>
+    
+      <script type="text/javascript" src="//use.typekit.net/aak3kyd.js"></script>
+<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+    
+<style>
+    
+    body {
+     padding: 0px;
+        margin: 0px;
+        transform-origin: center;
+    }
+#loopMachine {
+    
+ position: absolute;
+left: 0px;
+width: 100%;
+height: 40vw;
+top: 250%; 
+}
+    
+  #theCast {
+font-family: "cronos-pro";
+height: 30%;
+height: calc(100% - 40vw);
+position: absolute;
+top: 0px;
+width: 100%;
+}
+    
+.h1 {
+margin: 0px;
+padding: 0px;
+font-weight: 400;
+font-size: 300%;
+font-size: 7vh;
+height: auto;
+margin-left: 1.5%;
+    font-family: "Brandon-Grotesque";
+      transform-origin: center;
+    width: auto;
+    position: absolute;
+}
+
+    h3 {
+        font-size: 2vw;
+        font-weight: 300;
+     margin: 0px;
+        padding: 0px;
+    }
+    
+    .head {
+     position: fixed;
+top: 0px;
+left: 0px;
+height: 100%;
+width: 100%;   
+   color: white;
+          transform-origin: center;
+        background-color: black;
+    }
+    
+ .date {
+margin-left: 20.8vh;
+font-size: 3vh;
+margin-top: 3.5%;
+position: absolute;
+height: auto;
+width: auto;
+transform-origin: center;
+}
+    
+  #amplitude-play-pause {
+width: 4%;
+height: 5vw;
+float: left;
+margin-left: 2%;
+margin-right: 4%;
+}
+ #amplitude-play-pause:hover {   
+    
+     
+    cursor: pointer; 
+     
+     
+ }
+    
+    
+    #amplitude-song-slider{
+    display: inline-block;
+    height: 10px;
+    border-radius: 5px;
+    width: 220px;
+    background-color: rgba(237,237,237,.8);
+    margin-left: 10px;
+    margin-top: 5px;
+}
+    
+    
+     #amplitude-song-slider:hover {
+         cursor: pointer;
+         
+         
+     }
+    
+#amplitude-track-progress{
+    background-color: #fad52c;
+    height: 10px;
+    border-radius: 5px;
+    width: 0px;
+}
+    
+    
+.controls {
+margin-top: 1vh;
+position: absolute;
+top: 10%;
+left: 1.5%;
+width: 41%;
+}
+    
+    .head img {
+     position: absolute;
+top: 0px;
+left: 0px;
+z-index: -8;
+min-width: 100%;
+min-height: 100%;
+opacity: .6;   
+        
+    }
+    
+    
+    .seeIt {
+position: absolute;
+top: 80%;
+width: 50%;
+left: 25%;
+text-align: center;
+        font-family: "cronos-pro";
+}
+    
+    
+    .seeIt:hover {
+     cursor: pointer;   
+        
+    }
+    
+    .body {
+        
+     position: absolute;
+top: 100%;
+left: 0px;
+color: white;
+z-idnex: 20000;
+width: 60%;
+padding: 20%;   
+        
+    }
+    
+    p {
+font-size: 2vw;
+font-family: "cronos-pro";
+font-weight: 300;
+}
+    
+    
+</style>    
+<script src="scripts/amplitude.js"></script>
+</head>
+
+
+<body>
+    <div id="theCast">
+        <div class="head">
+           
+            <div class="h1">Loops</div>
+           
+            
+            <div class="date">
+                Season 10 | Episode 3
+            </div>
+            
+           <audio id="single-song" amplitude-artist="Amplitude Artist" amplitude-title="Amplitude Title" amplitude-audio-type="song">
+  <source src="radiolab100411.mp3" type="audio/mp3"/>
+</audio>
+            
+            <div class="controls">
+            <div id="amplitude-play-pause" class="amplitude-paused">Play</div>
+<span id="amplitude-current-time">0:00</span> / <span id="amplitude-audio-duration">0:00</span>
+            
+            <div id="amplitude-song-slider"><div id="amplitude-track-progress"></div><div id="amplitude-track-status"></div></div>
+</div>
+            
+         <img src="http://www.wnyc.org/i/620/372/c/80/photologue/photos/train_loop.jpg">   
+        
+            
+            
+            
+        </div>
+    
+    
+    
+    
+    
+    </div>
+    
+    <div class="body">
+    
+    <p>Our lives are filled with loops that hurt us, heal us, make us laugh, and, sometimes, leave us wanting more. This hour, Radiolab investigates the strange things that emerge when something happens, then happens again, and again, and again, and again, and again, and… well, again.</p>
+        
+        <p>
+In this episode of Radiolab, Jad and Robert try to explain an inexplicable comedy act, listen to a loop that literally dies in your ear, and they learn about a loop that sent a shudder up the collective spine of mathematicians everywhere. Finally, they talk to a woman who got to watch herself think the thought that she was watching herself think the thought that she was watching herself think the thought that ... you get the point.
+</p>
+        <p>
+All that plus mind-bending musical accompaniment from Laguardia Arts High School singers Nathaniel Sabat, Julian Soto, Eli Greenhoe, Kelly Efthimiu, Julia Egan, and Ruby Froom.</p>
+    <div class="seeIt"><h3>Loop Designer</h3>
+            <h1>&darr;</h1>
+            </div>
+    
+    </div>
+    
+    <canvas id="loopMachine"></canvas>
+
+    
+   
+    <script src="scripts/ball.js"></script>
+    <script src="scripts/tutorial.js"></script>
+    <script src="scripts/mainScript.js"></script>
+    
+    
+    
+    <script>
+    
+        
+        document.getElementsByClassName('seeIt')[0].addEventListener('click',function() {
+           scrolling=true;
+            console.log(scrolling);
+            
+            
+        });
+        
+   
+   
+    
+    
+    </script>
+    
+</body>
+
+
+</html>
